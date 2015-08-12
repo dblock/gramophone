@@ -8,6 +8,7 @@ gem 'activemodel', '~> 4.2.0'
 gem 'kaminari', '~> 0.16.1', require: 'kaminari/grape'
 gem 'mongoid', '~> 4.0'
 gem 'mongoid-scroll'
+gem 'instagram', '~> 1.1.5'
 
 group :development do
   gem 'rake'

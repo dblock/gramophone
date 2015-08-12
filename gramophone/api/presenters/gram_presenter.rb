@@ -7,6 +7,8 @@ module Gramophone
         include Grape::Roar::Representer
 
         property :id, type: String
+        property :instagram_id, type: String
+        property :data, type: Hash
 
         link :self do |opts|
           request = Grape::Request.new(opts[:env])
