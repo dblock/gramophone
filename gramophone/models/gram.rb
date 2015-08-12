@@ -7,6 +7,9 @@ module Gramophone
       field :instagram_id, type: String
       index instagram_id: 1
 
+      field :tags, type: Array, default: []
+      index tags: 1
+
       field :data, type: Hash
     end
   end

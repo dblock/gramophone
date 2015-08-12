@@ -20,4 +20,7 @@ group :test do
   gem 'rack-test', '~> 0.6.2'
   gem 'hyperclient', '~> 0.6.1'
   gem 'fabrication'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'database_cleaner'
 end

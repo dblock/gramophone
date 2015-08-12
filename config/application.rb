@@ -14,5 +14,6 @@ end
 Mongoid.load! File.expand_path('../mongoid.yml', __FILE__), ENV['RACK_ENV']
 
 require 'models'
+require 'importers'
 require 'api'
 require 'app'

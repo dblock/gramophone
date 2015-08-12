@@ -15,6 +15,13 @@ $ rackup
 [2013-06-20 08:57:58] INFO  WEBrick::HTTPServer#start: pid=247 port=9292
 ```
 
+Grab
+----
+
+```
+rake instagram:grab[warhol]
+```
+
 Copyright and License
 ---------------------
 

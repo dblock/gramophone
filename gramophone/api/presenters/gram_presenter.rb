@@ -9,6 +9,8 @@ module Gramophone
         property :id, type: String
         property :instagram_id, type: String
         property :data, type: Hash
+        property :created_at, type: DateTime
+        property :tags, type: Array
 
         link :self do |opts|
           request = Grape::Request.new(opts[:env])
