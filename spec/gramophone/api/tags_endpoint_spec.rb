@@ -26,18 +26,25 @@ describe Gramophone::Api::Endpoints::TagsEndpoint do
   end
 
   context 'tag' do
-    let!(:gram) { Fabricate(:gram) }
-    it 'returns a tag via name' do
-      result = client.tag(id: gram.tags.first)
-      expect(result).to_not be nil
-      expect(result.to_s).to end_with "tags/#{gram.tags.first}"
+    let(:tag) { Fabricate(:gram_tag) }
+    context 'by name' do
+      subject do
+        client.tag(id: tag.name)
+      end
+      it 'redirects tp tag id' do
+        expect(subject._links['location'].to_s).to end_with "tags/#{tag.id}"
+      end
     end
-    it 'returns a tag via id' do
-      tag = Gramophone::Models::GramTag.first
-      result = client.tag(id: tag.id)
-      expect(result).to_not be nil
-      expect(result.to_s).to end_with "tags/#{tag.id}"
-      expect(result.name).to eq tag.name
+    context 'by id' do
+      subject do
+        client.tag(id: tag.id)
+      end
+      it 'returns a tag' do
+        expect(subject.name).to eq tag.name
+      end
+      it 'automatically assigns artist_id' do
+        expect(subject._links['artist'].to_s).to eq "https://api.artsy.net/api/artists/#{tag.name}"
+      end
     end
   end
 end

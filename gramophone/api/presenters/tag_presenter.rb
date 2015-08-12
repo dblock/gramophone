@@ -8,7 +8,12 @@ module Gramophone
 
         property :id, type: String
         property :name, type: String
+        property :count, as: :gram_count, type: Integer
         property :created_at, type: DateTime
+
+        link :artist do |_opts|
+          "https://api.artsy.net/api/artists/#{artist_id || name}"
+        end
 
         link :self do |opts|
           request = Grape::Request.new(opts[:env])
