@@ -32,6 +32,11 @@ $ bundle exec rack-console
  => 40
 ```
 
+API
+---
+
+Currently in production [here](https://gramophone-production.herokuapp.com/api).
+
 Copyright and License
 ---------------------
 
