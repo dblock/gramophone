@@ -6,12 +6,13 @@ module Gramophone
         format :json
         formatter :json, Grape::Formatter::Roar
 
-        desc 'Gramophone Reticulated Grams Api.'
+        desc 'Gramophone API.'
         get do
           present self, with: Gramophone::Api::Presenters::RootPresenter
         end
 
         mount Gramophone::Api::Endpoints::GramsEndpoint
+        mount Gramophone::Api::Endpoints::TagsEndpoint
 
         add_swagger_documentation api_version: 'v1'
       end

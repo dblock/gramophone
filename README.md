@@ -19,7 +19,17 @@ Grab
 ----
 
 ```
-rake instagram:grab[warhol]
+$ rake instagram:import[warhol]
+```
+
+Debug
+-----
+
+```
+$ bundle exec rack-console
+
+2.1.2 :001 > Gramophone::Models::Gram.count
+ => 40
 ```
 
 Copyright and License

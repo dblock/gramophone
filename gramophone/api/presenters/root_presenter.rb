@@ -28,6 +28,20 @@ module Gramophone
           }
         end
 
+        link :tags do |opts|
+          {
+            href: "#{base_url(opts)}/api/tags{?page,size}",
+            templated: true
+          }
+        end
+
+        link :tag do |opts|
+          {
+            href: "#{base_url(opts)}/api/tags/{id}",
+            templated: true
+          }
+        end
+
         private
 
         def base_url(opts)

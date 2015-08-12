@@ -11,7 +11,7 @@ describe Gramophone::Api::Endpoints::RootEndpoint do
     get '/api'
     expect(last_response.status).to eq 200
     links = JSON.parse(last_response.body)['_links']
-    expect(links.keys.sort).to eq(%w(gram grams self swagger_doc))
+    expect(links.keys.sort).to eq(%w(gram grams self swagger_doc tag tags))
   end
   it 'follows all links' do
     get '/api'

@@ -9,6 +9,8 @@ gem 'kaminari', '~> 0.16.1', require: 'kaminari/grape'
 gem 'mongoid', '~> 4.0'
 gem 'mongoid-scroll'
 gem 'instagram', '~> 1.1.5'
+gem 'mongoid-tag-collectible', '~> 0.2.1'
+gem 'rack-console', '~> 1.3.1'
 
 group :development do
   gem 'rake'
@@ -23,4 +25,5 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'database_cleaner'
+  gem 'faker'
 end

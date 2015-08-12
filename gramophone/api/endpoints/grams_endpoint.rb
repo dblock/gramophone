@@ -22,7 +22,7 @@ module Gramophone
             use :pagination
           end
           get do
-            grams = paginate_and_sort_by_cursor(Gramophone::Models::Gram)
+            grams = paginate_and_sort_by_cursor(Gramophone::Models::Gram, default_sort_order: '-created_at')
             present grams, with: Gramophone::Api::Presenters::GramsPresenter
           end
         end
