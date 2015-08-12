@@ -11,7 +11,7 @@ module Gramophone
         property :data, type: Hash
         property :created_at, type: DateTime
 
-       link :tags do |opts|
+        link :tags do |opts|
           request = Grape::Request.new(opts[:env])
           represented.tags.map do |tag|
             "#{request.base_url}/api/tags/#{tag}"

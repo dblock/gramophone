@@ -15,7 +15,7 @@ module Gramophone
       private
 
       def downcase_tags
-        tags = tags.map(&:downcase) if tags
+        tags.map!(&:downcase) if tags
       end
     end
   end

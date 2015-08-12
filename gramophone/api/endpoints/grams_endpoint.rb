@@ -19,10 +19,13 @@ module Gramophone
 
           desc 'Get all the grams.'
           params do
+            optional :tag, type: String, desc: 'Only return grams with this tag.'
             use :pagination
           end
           get do
-            grams = paginate_and_sort_by_cursor(Gramophone::Models::Gram, default_sort_order: '-created_at')
+            query = Gramophone::Models::Gram
+            query = query.where(tags: params[:tag]) if params[:tag]
+            grams = paginate_and_sort_by_cursor(query, default_sort_order: '-created_at')
             present grams, with: Gramophone::Api::Presenters::GramsPresenter
           end
         end

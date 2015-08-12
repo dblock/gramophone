@@ -14,6 +14,11 @@ module Gramophone
           request = Grape::Request.new(opts[:env])
           "#{request.base_url}/api/tags/#{id}"
         end
+
+        link :grams do |opts|
+          request = Grape::Request.new(opts[:env])
+          "#{request.base_url}/api/grams?tag=#{name}"
+        end
       end
     end
   end

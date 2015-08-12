@@ -16,7 +16,7 @@ module Gramophone
 
         link :grams do |opts|
           {
-            href: "#{base_url(opts)}/api/grams{?page,size}",
+            href: "#{base_url(opts)}/api/grams{?page,size,tag}",
             templated: true
           }
         end

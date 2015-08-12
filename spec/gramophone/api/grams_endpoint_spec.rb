@@ -15,6 +15,16 @@ describe Gramophone::Api::Endpoints::GramsEndpoint do
     end
   end
 
+  context 'tagged' do
+    it 'only returns grams with a given tag' do
+      gram_foo = Fabricate(:gram, tags: ['foo'])
+      Fabricate(:gram, tags: ['bar'])
+      grams = client.grams(tag: 'foo')
+      expect(grams.count).to eq 1
+      expect(grams.first.id).to eq gram_foo.id.to_s
+    end
+  end
+
   context 'grams' do
     before do
       11.times { Fabricate(:gram) }
