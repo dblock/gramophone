@@ -23,7 +23,7 @@ module Gramophone
             use :pagination
           end
           get do
-            tags = paginate_and_sort_by_cursor(Gramophone::Models::GramTag)
+            tags = paginate_and_sort_by_cursor(Gramophone::Models::GramTag, default_sort_order: '-count')
             present tags, with: Gramophone::Api::Presenters::TagsPresenter
           end
         end
