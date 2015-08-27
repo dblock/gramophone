@@ -22,6 +22,13 @@ Grab
 $ rake instagram:import[warhol]
 ```
 
+Repeat
+------
+
+```
+$ rake instagram:import_all
+```
+
 Debug
 -----
 
