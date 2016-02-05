@@ -29,11 +29,10 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
-    bson (3.2.6)
+    bson (4.0.1)
     builder (3.2.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
-    connection_pool (2.2.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     database_cleaner (1.5.1)
@@ -99,10 +98,12 @@ GEM
       nokogiri (>= 1.5.9)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    mongoid (4.0.2)
+    mongo (2.2.2)
+      bson (~> 4.0)
+    mongoid (5.1.0)
       activemodel (~> 4.0)
-      moped (~> 2.0.0)
-      origin (~> 2.1)
+      mongo (~> 2.1)
+      origin (~> 2.2)
       tzinfo (>= 0.3.37)
     mongoid-compatibility (0.3.1)
       activesupport
@@ -114,17 +115,12 @@ GEM
     mongoid-tag-collectible (0.2.2)
       activesupport
       mongoid (>= 3.0.0)
-    moped (2.0.7)
-      bson (~> 3.0)
-      connection_pool (~> 2.0)
-      optionable (~> 0.2.0)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     net-http-digest_auth (1.4)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    optionable (0.2.0)
     origin (2.2.0)
     parser (2.3.0.2)
       ast (~> 2.2)
@@ -206,7 +202,7 @@ DEPENDENCIES
   hyperclient
   instagram
   kaminari
-  mongoid (~> 4.0)
+  mongoid
   mongoid-scroll
   mongoid-tag-collectible
   rack-console
