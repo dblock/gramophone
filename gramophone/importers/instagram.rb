@@ -2,7 +2,7 @@ module Gramophone
   module Importers
     module Instagram
       def self.import_tag!(tag)
-        client_id = ENV['INSTAGRAM_CLIENT_ID'] || fail('Missing ENV[INSTAGRAM_CLIENT_ID]!')
+        client_id = ENV['INSTAGRAM_CLIENT_ID'] || raise('Missing ENV[INSTAGRAM_CLIENT_ID]!')
         client = ::Instagram.client(client_id: client_id)
         results = client.tag_recent_media(tag)
         grams = []
